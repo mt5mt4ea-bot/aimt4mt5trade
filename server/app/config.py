@@ -38,6 +38,12 @@ class Settings:
     min_confidence: float
     auto_trading_enabled: bool
     allow_web_enable: bool
+    demo_auth_enabled: bool
+    demo_admin_email: str
+    demo_admin_password: str
+    demo_member_email: str
+    demo_member_password: str
+    session_hours: int
 
 
 def get_settings() -> Settings:
@@ -63,8 +69,13 @@ def get_settings() -> Settings:
         min_confidence=min(0.95, max(0.5, float(os.getenv("MIN_CONFIDENCE", "0.65")))),
         auto_trading_enabled=_bool("AUTO_TRADING_ENABLED", False),
         allow_web_enable=_bool("ALLOW_WEB_ENABLE", False),
+        demo_auth_enabled=_bool("DEMO_AUTH_ENABLED", True),
+        demo_admin_email=os.getenv("DEMO_ADMIN_EMAIL", "admin@wisefx.ai").strip().lower(),
+        demo_admin_password=os.getenv("DEMO_ADMIN_PASSWORD", "WiseFX@Admin11"),
+        demo_member_email=os.getenv("DEMO_MEMBER_EMAIL", "member@wisefx.ai").strip().lower(),
+        demo_member_password=os.getenv("DEMO_MEMBER_PASSWORD", "WiseFX@Member11"),
+        session_hours=max(1, min(168, int(os.getenv("SESSION_HOURS", "24")))),
     )
 
 
 settings = get_settings()
-

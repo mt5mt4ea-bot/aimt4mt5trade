@@ -1,6 +1,6 @@
 {
-  "name": "sites-project",
-  "version": "0.1.0",
+  "name": "wisefx-ai",
+  "version": "1.1.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "lint": "oxlint app components/trading-dashboard.tsx",
+    "lint": "oxlint app components/trading-dashboard.tsx components/wise-app.tsx",
     "format": "oxfmt"
   },
   "dependencies": {

@@ -1,5 +1,5 @@
-import { TradingDashboard } from '@/components/trading-dashboard';
+import { WiseApp } from '@/components/wise-app';
 
 export default function Home() {
-  return <TradingDashboard />;
+  return <WiseApp />;
 }

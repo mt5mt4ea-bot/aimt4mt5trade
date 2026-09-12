@@ -120,3 +120,16 @@ class AutoTradingControl(BaseModel):
     enabled: bool
     confirmation: str = ""
 
+
+class LoginRequest(BaseModel):
+    email: str = Field(min_length=5, max_length=160)
+    password: str = Field(min_length=8, max_length=128)
+
+
+class RegisterRequest(LoginRequest):
+    name: str = Field(min_length=2, max_length=64)
+
+
+class AdminUserUpdate(BaseModel):
+    role: Literal["ADMIN", "MEMBER"] | None = None
+    status: Literal["ACTIVE", "SUSPENDED"] | None = None

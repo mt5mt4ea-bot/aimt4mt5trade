@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'WiseFX AI｜智汇AI交易控制台',
-  description: '智汇AI EA 行情分析、AI 决策、订单执行、复盘与风险控制面板',
+  title: 'WiseFX AI｜智汇AI交易决策与风控系统',
+  description: 'WiseFX AI 连接 MT5 行情、结构化 AI 决策、EA 执行与硬风控。',
 };
 
 export default function RootLayout({

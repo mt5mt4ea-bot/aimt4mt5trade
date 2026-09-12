@@ -1,4 +1,4 @@
-# WiseFX AI（智汇AI）
+# WiseFX AI（智汇AI）v1.1
 
 根据参考界面与前期设计文档实现的可运行 MVP，包含：
 
@@ -7,6 +7,18 @@
 - DeepSeek/OpenAI 兼容适配：Base URL、模型和 API Key 均可配置，使用 JSON Output。
 - MT5 EA：定时上传行情、获取计划、本地硬风控、模拟/实盘双开关和订单回报。
 - SQLite 审计存储、Docker 与 Windows 启动脚本。
+- 官网首页、演示登录注册、管理员/会员 RBAC 权限管理。
+
+## 演示账号
+
+登录页已经默认填写管理员账号，也可以一键切换会员账号：
+
+```text
+管理员：admin@wisefx.ai / WiseFX@Admin11
+会员：member@wisefx.ai / WiseFX@Member11
+```
+
+这些凭据仅用于开发演示。正式运营前必须设置 `DEMO_AUTH_ENABLED=false`，并接入邮箱验证、密码找回、登录限流和独立的初始管理员创建流程。
 
 ## 目录
 
@@ -34,6 +46,8 @@ scripts/             初始化、构建、启动、冒烟测试
 - API 文档：`http://127.0.0.1:1899/api/docs`
 
 如 Nginx Proxy Manager 已把 `ai.mt4mt5.trade` 转发到本机 `1899`，无需额外前端跨域配置。建议启用 HTTPS，并关闭缓存与 WebSocket 选项无关；API 和页面使用同一域名。
+
+访问首页后，未登录用户看到产品介绍与价格；登录后自动进入交易控制台。ADMIN 拥有用户和系统管理权限，MEMBER 当前为控制台只读权限。所有权限均由服务端 RBAC 校验。
 
 ## Docker 启动
 
