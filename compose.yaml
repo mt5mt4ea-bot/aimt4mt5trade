@@ -1,0 +1,11 @@
+services:
+  genesis-ai:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - server/.env
+    ports:
+      - "1899:1899"
+    volumes:
+      - ./server/data:/app/server/data
+

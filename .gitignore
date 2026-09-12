@@ -1,0 +1,14 @@
+server/.env
+server/data/*.db
+server/data/*.db-*
+web/node_modules/
+web/dist/
+web/.wrangler/
+__pycache__/
+*.pyc
+*.log
+.venv/
+_image_previews/
+*.HEIC
+.DS_Store
+Thumbs.db
