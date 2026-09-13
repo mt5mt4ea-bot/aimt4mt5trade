@@ -58,6 +58,7 @@
 html { background: var(--background); }
 body {
   min-width: 320px;
+  overflow-x: hidden;
   margin: 0;
   color: var(--foreground);
   background:
@@ -77,4 +78,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .signal-glow { text-shadow: 0 0 28px color-mix(in srgb, currentColor 38%, transparent); }
 .fine-grid { background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 54px 44px; }
 .scrollbar-thin { scrollbar-width: thin; scrollbar-color: #2c3931 transparent; }
+.mobile-safe-nav { padding-bottom: env(safe-area-inset-bottom); }
+@media (min-width: 768px) { .mobile-safe-nav { padding-bottom: 0; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
