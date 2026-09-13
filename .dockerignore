@@ -1,0 +1,13 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+*.log
+*.HEIC
+_image_previews
+server/.env
+server/data
+web/node_modules
+web/dist
+web/.wrangler

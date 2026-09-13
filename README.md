@@ -58,6 +58,8 @@ scripts/             初始化、构建、启动、冒烟测试
 docker compose up -d --build
 ```
 
+Compose 项目名为 `wisefx_ai`（Docker Compose 项目名只允许小写），容器显示名称为 `WiseFX_AI`，镜像为 `wisefx_ai:1.1`。`server/data` 挂载到宿主机持久保存，`server/.env` 只在运行时注入，不会写入镜像。
+
 ## AI 配置
 
 默认使用当前 DeepSeek OpenAI 兼容接口：

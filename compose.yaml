@@ -1,5 +1,9 @@
+name: wisefx_ai
+
 services:
-  genesis-ai:
+  wisefx-ai:
+    container_name: WiseFX_AI
+    image: wisefx_ai:1.1
     build: .
     restart: unless-stopped
     env_file:
@@ -8,4 +12,9 @@ services:
       - "1899:1899"
     volumes:
       - ./server/data:/app/server/data
-
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:1899/api/v1/health', timeout=5)"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 15s
